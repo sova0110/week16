@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="./assets/registration.css" />
+</head>
+<body>
+    <h2>Форма регистрации пользователей</h2>
+    <section class="registrationForm">
+    <form class="form" name="userRegistration__form">
+        <label for="userName" class="form__label">Имя:</label>
+        <input type="text" id="firstName" name="userName" class="form__input" placeholder="Иван Иванов" required minlength="2" maxlength="20" onchange="formSubmit()"/>
+        <p class="errorName" id="errorNameId"></p>
+        <p class="errorName" id="errorNameId2"></p>
+        <label for="email" class="form__label">Email:</label>
+        <input type="email" id="Email" name="email" class="form__input" placeholder="super@gmail.com" required/>
+        <p class="errorEmail" id="errorEmailId"></p>
+        <br />
+        <label for="age" class="form__label">Возраст:</label>
+        <input type="number" id="ageId" name="age" class="form__input" placeholder="18" required onchange="formSubmit()"/>
+        <p class="errorAge" id="errorAgeId"></p>
+        <br />
+        <div class="selectGender">
+        <label for="gender" class="form__label">Пол</label>
+        <input
+            type="radio"
+            name="gender_w"
+            value="women"
+            class="form__input" onchange="formSubmit()"/>
+        <span>Женский</span>
+        <input
+        type="radio"
+        name="gender_m"
+        value="male"
+        class="form__input" onchange="formSubmit()"/>
+    <span>Мужской</span>
+    <br />
+    </div>
+ 
+    <label for="profession" class="form__label">Профессия: </label>
+    <select id="formSelect" name="formSelect" class="form__select" required>
+        <option value="1">Разработчик</option>
+        <option value="2">Тестировщик</option>
+        <option value="3">Врач</option>
+        <option value="4">Инженер</option>
+        <option value="5">Учитель</option>
+        <option value="6">Повар</option>
+        <option value="7">Другое</option>
+
+    </select>
+    <br />
+    <label for="password" class="form__label">Пароль: </label>
+    <input type="password" id="passwordUserId" name="passwordUser" class="form__input" placeholder="Супер надежный пароль" required minlength="8" onchange="formSubmit()"/>
+    <p class="errorPassword" id="errorPasswordId"></p>
+    <br />
+    <div class="checkbox">
+    <input type="checkbox" id="checkboxId" name="checkboxForm" class="form__checkbox" required onchange="formSubmit()"/>
+    <label for="checkbox">Даю согласие на бработку персональных данных</label>
+    </div>
+    <input type="submit" name="formButton" value="Отправить" class="form__submit" />
+</form>
+    </section>
+    <script src="./registration.js"></script>
+</body>
+</html>
