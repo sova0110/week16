@@ -1,0 +1,38 @@
+h2{
+    text-align: center;
+    color:darkblue;
+}
+.registrationForm{
+    display:flex;
+    gap:10px;
+    flex-direction: column;
+    align-items: center;
+}
+input{
+    width: 30vw;
+}
+.checkbox{
+    display: flex;
+    flex-direction: row;
+}
+.form__checkbox{
+    width: 50px;
+}
+.form__select{
+    width: 30vw;
+}
+.selectGender{
+    display: flex;
+    flex-direction: row;
+    width: 30vw;
+}
+
+.form{
+    display:flex;
+    gap:10px;
+    flex-direction: column;
+    align-items: center;
+}
+p{
+    color:red;
+}
