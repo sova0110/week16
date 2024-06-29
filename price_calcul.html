@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/price_calcul.css" />
+    <title>Document</title>
+</head>
+<body>
+    <h1>Калькулятор стоимости автомобилей</h1>
+<form name="carPriceForm" id="carPriceFormId" class="carPriceForm__cl">
+    <div>
+    Марка авто: 
+    <select id="car_id" class="StyleSelectBox1" name="selectBrandCar" required>
+        <option value="0">- выберите марку авто -</option>
+        <option value="1">Ford</option>
+        <option value="2">Reno</option>
+        <option value="3">Ferarri</option>
+    </select>
+    </div>
+    <div>
+    модель: 
+    <select id="model_id" class="StyleSelectBox2" name="selectModelCar" disabled required>
+        <option value="0">- Выберите модель -</option>
+    </select>
+    </div>
+    <div class="selectFuel" id="fuelBlockId">
+        <label for="fuel" class="form__label">Тип топлива</label>
+        <input
+            type="radio"
+            name="fuel"
+            value="oil"
+            class="form__input"/>
+        <span>Бензин </span>
+        <input
+        type="radio"
+        name="fuel"
+        value="gaz"
+        class="form__input"/>
+        <span>Газ </span>
+        <input
+        type="radio"
+        name="fuel"
+        value="dizel"
+        class="form__input"/>
+        <span>Диз топливо </span>
+        <input
+        type="radio"
+        name="fuel"
+        value="electricity"
+        class="form__input"/>
+        <span>Электричество </span> 
+    </div>
+    <div>
+    <label for="engine" class="form__label">Объем двигателя:</label>
+    <input type="float" id="engineId" name="engin" class="form__input" placeholder="1.4" onchange="priceCalculater()"/>
+    <div id="errorEngine"></div>
+</div>
+    <div>
+    <label for="year" class="form__label" >Год выпуска:</label>
+    <input type="number" id="yearId" name="year" class="form__input" placeholder="2023" required onchange="priceCalculater()"/>
+    <div id="errorYear"></div>
+</div>
+    <div class="car__status" id="carStatusId">
+        <label for="stat" class="form__label">Состояние автомобиля</label>
+        <input
+        type="radio"
+        name="status"
+        value="new"
+        required
+        class="form__input"/>
+        <span>Новый </span> 
+        <input
+        type="radio"
+        name="status"
+        value="used"
+        id="used"
+        class="form__input"/>
+        <span>Поддержанный </span> 
+    </div>
+    <div class="car__owners" id="car_ownersId">
+        Количество владельцев: 
+        <select id="owners_id" class="StyleSelectBox3" name="selectOwners" required disabled onchange="priceCalculater()">
+            <option value="0">- количество владельцев -</option>
+            <option value="1">1-2</option>
+            <option value="2">Более 3-х</option>
+        </select>
+    </div>
+    <div class="payment">
+        <label for="payment" class="form__label">Способы оплаты</label>
+        <input
+        type="radio"
+        name="payment"
+        value="card"
+        class="form__input"/>
+        <span>Карта </span> 
+        <input
+        type="radio"
+        name="payment"
+        value="cash"
+        class="form__input"/>
+        <span>Наличные </span>
+        <input
+        type="radio"
+        name="payment"
+        value="invoice"
+        class="form__input"/>
+        <span>Со счета юр лица </span>
+    </div>
+    <div id="photoId"></div>
+    <input type="reset" value="Очистить форму" id="reset">
+</form>
+Стоимость Вашего авто, рублей:<p class="totalPrice" id="totalPriceId"></p>
+
+    <script src="./price_calcul.js"></script> 
+</body>
+</html>
