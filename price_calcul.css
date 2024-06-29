@@ -1,0 +1,17 @@
+.carPriceForm__cl{
+    display: flex;
+    flex-direction: column;
+    gap:10px;
+}
+img{
+    width: 300px;
+}
+#errorEngine{
+    color:red;
+}
+#errorYear{
+    color:red;
+}
+#reset{
+    width: 200px;
+}
